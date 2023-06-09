@@ -10,7 +10,9 @@ return {
     },
 
     opts = function()
-      require("config.test")
+      local telescope = require("telescope")
+      telescope.load_extension("fzf")
+      telescope.load_extension("file_browser")
     end,
   },
   {
@@ -22,7 +24,7 @@ return {
     dependencies = {
       "hrsh7th/cmp-cmdline",
     },
-    config = function()
+    opts = function()
       local cmp = require("cmp")
 
       -- コマンドラインの補完
